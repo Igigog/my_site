@@ -1,24 +1,21 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Thread, Message
 from django.utils import timezone
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
     threads = Thread.objects.order_by("-pub_date")[:10]
-    return render(request, 'forum/forum.html', {'threads': threads})
+    return render(request, 'blog/forum.html', {'threads': threads})
 
 
 def thread(request, int_thread_id):
     curr_thread = Thread.objects.get(id=int_thread_id)
     comments = Message.objects.filter(thread=int_thread_id)
-    return render(request, 'forum/thread.html', {'thread': curr_thread,
-                                                 'comments': comments,
-                                                 })
+    return render(request, 'blog/thread.html', {'thread': curr_thread,
+                                                'comments': comments,
+                                                })
 
 
 @login_required(login_url='/login')
@@ -48,7 +45,6 @@ def search_thread(request):
 
 
 @login_required(login_url='/login')
-@permission_required('')
 def change_thread(request, int_thread_id):
     title = request.POST['title']
     text = request.POST['text']
@@ -73,24 +69,24 @@ def create_comment(request, int_thread_id):
 
 
 def creation_page(request):
-    return render(request, 'forum/create_thread.html')
+    return render(request, 'blog/create_thread.html')
 
 
 def login_page(request):
-    return render(request, 'forum/login.html')
+    return render(request, 'blog/login.html')
 
 
 def register_page(request):
-    return render(request, 'forum/register.html')
+    return render(request, 'blog/register.html')
 
 
 def login(request):
-    return render(request, 'forum/login.html')
+    return render(request, 'blog/login.html')
 
 
 def register(request):
-    return render(request, 'forum/login.html')
+    return render(request, 'blog/login.html')
 
 
 def info_page(request):
-    return render(request, 'forum/aboutus.html')
+    return render(request, 'blog/aboutus.html')
