@@ -1,0 +1,19 @@
+{% extends "forum/main.html" %}
+
+{% block title %}Forum{% endblock %}
+{% block forum_current %}current{% endblock %}
+
+{% block content %}
+<div class="forum">
+    {% for thread in threads %}
+    <div class="thread_view">
+        <div class="thread_name">
+            <h4><a href="{% url 'thread' thread.id %}">{{ thread.title }}</a></h4>
+        </div>
+        <div class="thread_text">
+        {{ thread.text }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

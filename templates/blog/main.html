@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/main.css' %}">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+{% block header %}
+<div class="header">
+    <ul>
+        <li class="{% block home_current %}{% endblock %}"><a href="{% url 'info_page' %}">Home</a></li>
+        <li class="{% block forum_current %}{% endblock %}"><a href="{% url 'index' %}">Forum</a></li>
+        {% if user.is_authenticated %}
+        <li class ="user_hello">Hello, {{ user.username }}</li>
+        <li class="addbtn" style="float:right">
+            <a href="{% url 'creation_page' %}">New thread</a></li>
+        {% endif %}
+        <li class ="{% block login_current %}{% endblock %}" style="float:right">
+            <a href="{% url 'login_page' %}">
+                {% if user.is_authenticated %}Logout
+                {% else %}Login{% endif %}</a></li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+</body>
+</html>
