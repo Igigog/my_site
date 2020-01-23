@@ -1,15 +1,21 @@
 {% extends 'blog/main.html' %}
 
-{% block title %}Über uns{% endblock %}
+{% block title %}About me{% endblock %}
 {% block home_current %}current{% endblock %}
 
+{% load static %}
 {% block content %}
 <body>
 
 <div class="aboutus">
-    <ul class="aboutus">
-        <img class="aboutus" src="../../blog/static/forum/IA.jpg">
-        <li id="igor" class="aboutus">Igor Anpilogov</li>
-    </ul>
+    <div class="image"><img src="{% static 'IA.jpg' %}" alt="my mascote">Kurisutina</div>
+    <div class="text">
+        <p>Hi, my name is Igor.</p>
+        <p>And this is my site, created with Django
+            and some Python magic.</p>
+        <p>Currently (january 2020) 18 y.o., learning guitar and machine learning.
+           I will use this website as personal diary.</p>
+    </div>
+    <div class="placeholder"></div>
 </div>
 {% endblock %}

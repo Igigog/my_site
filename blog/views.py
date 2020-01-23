@@ -70,23 +70,3 @@ def create_comment(request, int_thread_id):
 
 def creation_page(request):
     return render(request, 'blog/create_thread.html')
-
-
-def login_page(request):
-    return render(request, 'blog/login.html')
-
-
-def register_page(request):
-    return render(request, 'blog/register.html')
-
-
-def login(request):
-    return render(request, 'blog/login.html')
-
-
-def register(request):
-    return render(request, 'blog/login.html')
-
-
-def info_page(request):
-    return render(request, 'blog/aboutus.html')

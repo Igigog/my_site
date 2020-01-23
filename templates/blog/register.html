@@ -6,6 +6,7 @@
 <section id="loginregister">
     <h2>Register new user</h2>
     <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
         <p class="LRtext">Username: </p><input type="text" name="username" placeholder="Username">
         <p class="LRtext">Password: </p><input type="text" name="password" placeholder="Password">
         <p class="LRtext">Retype password: </p><input type="text" name="retypepassword" placeholder="Retype password">
