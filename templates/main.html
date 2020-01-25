@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../my_site/static/my_site/main.css' %}">
     <title>{% block title %}Title{% endblock %}</title>
 </head>
 
 <body>
-<div id="page_container">
 
 {% block header %}
 <div class="header">
@@ -40,6 +39,5 @@
 </footer>
 {% endblock %}
 
-</div>
 </body>
 </html>
