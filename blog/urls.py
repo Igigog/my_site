@@ -5,7 +5,6 @@ from django.views.generic.base import TemplateView
 
 app_name = 'blog'
 
-
 urlpatterns = [
     path('', views.index, name='index'),
     path('thread/<int_thread_id>', views.thread, name='thread'),
