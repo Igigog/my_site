@@ -1,17 +1,16 @@
-{% extends 'blog/../main/../main.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<section id="loginregister">
+<div id="loginregister">
     <h2>Register new user</h2>
-    <form action="{% url 'register' %}" method="post">
+    <form action="{% url 'users:register' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <p class="LRtext">Username: </p><input type="text" name="username" placeholder="Username">
-        <p class="LRtext">Password: </p><input type="text" name="password" placeholder="Password">
-        <p class="LRtext">Retype password: </p><input type="text" name="retypepassword" placeholder="Retype password">
-        <p class="LRtext">Email: </p><input type="text" name="email" placeholder="Email">
+        {{ form.username.as_p }}
+        {{ form.password.as_p }}
+        {{ form.email.as_p }}
         <input class="LRbutton" type="submit" value="Register">
     </form>
-</section>
+</div>
 {% endblock content %}

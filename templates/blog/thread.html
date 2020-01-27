@@ -1,9 +1,9 @@
-{% extends 'blog/../main/../main.html' %}
+{% extends 'base.html' %}
 
 {% block title %}{{ thread.title }}{% endblock %}
 
 {% block content %}
-<div class="thread">
+<div class="thread inner-centered">
     <div class="thread_name">
         <h4><a href="{% url 'thread' thread.id %}">{{ thread.title }}</a></h4>
     </div>
@@ -14,8 +14,8 @@
 
 <div class="comments">
     {% for comment in comments %}
-    <div class="comment">
-        <div class="comment_data">
+    <div class="comment flex-horizontal">
+        <div class="comment_data flex-vertical centered">
             <h4 class="creator_name">{{ comment.creator.username }}</h4>
             {{ comment.pub_date }}
         </div>
@@ -29,7 +29,7 @@
     <form action="{% url 'create_comment' thread.id %}" method="post">
         {% csrf_token %}
         <div class="new_comment_text">
-            <input type="text" name="text">
+            <input type="text" name="text" class="centered">
         </div>
         <button value="hewwo worldu!" type="submit">Submit</button>
     </form>

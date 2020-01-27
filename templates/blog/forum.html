@@ -1,4 +1,4 @@
-{% extends "blog/../main/../main.html" %}
+{% extends "base.html" %}
 
 {% block title %}Forum{% endblock %}
 {% block forum_current %}current{% endblock %}
@@ -6,7 +6,7 @@
 {% block content %}
 <div class="forum">
     {% for thread in threads %}
-    <div class="thread_view">
+    <div class="thread_view flex-vertical inner-centered">
         <div class="thread_name">
             <h4><a href="{% url 'thread' thread.id %}">{{ thread.title }}</a></h4>
         </div>

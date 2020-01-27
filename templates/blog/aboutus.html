@@ -1,4 +1,4 @@
-{% extends 'blog/../main/../main.html' %}
+{% extends 'blog/../main/../base.html' %}
 
 {% block title %}About me{% endblock %}
 {% block home_current %}current{% endblock %}
@@ -7,9 +7,11 @@
 {% block content %}
 <body>
 
-<div class="aboutus">
-    <div class="image"><img src="{% static 'IA.jpg' %}" alt="my mascote">Kurisutina</div>
-    <div class="text">
+<div id="aboutus" class="flex-horizontal">
+    <div class="image centered flex-vertical">
+        <img src="{% static 'IA.jpg' %}" alt="my mascote">Kurisutina
+    </div>
+    <div class="text flex-vertical">
         <p>Hi, my name is Igor.</p>
         <p>And this is my site, created with Django
             and some Python magic.</p>

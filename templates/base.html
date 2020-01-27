@@ -4,40 +4,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static '../my_site/static/my_site/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
     <title>{% block title %}Title{% endblock %}</title>
 </head>
 
-<body>
-
+<body class="flex-vertical {% block inner_name %}{% endblock %}">
 {% block header %}
 <div class="header">
-    <ul>
-        <li class="{% block home_current %}{% endblock %}"><a href="{% url 'info_page' %}">Home</a></li>
-        <li class="{% block forum_current %}{% endblock %}"><a href="{% url 'index' %}">Forum</a></li>
+    <ul class="inner-centered">
+        <li class="{% block home_current %}{% endblock %}"><a href="{% url 'blog:info_page' %}">Home</a></li>
+        <li class="{% block forum_current %}{% endblock %}"><a href="{% url 'blog:index' %}">Forum</a></li>
         {% if user.is_authenticated %}
         <li class ="user_hello">Hello, {{ user.username }}</li>
         <li class="addbtn" style="float:right">
-            <a href="{% url 'creation_page' %}">New thread</a></li>
+            <a href="{% url 'blog:creation_page' %}">New thread</a></li>
         {% endif %}
         <li class ="{% block login_current %}{% endblock %}" style="float:right">
-            <a href="{% url 'login' %}">
+            <a href="{% url 'users:login' %}">
                 {% if user.is_authenticated %}Logout
                 {% else %}Login{% endif %}</a></li>
     </ul>
 </div>
 {% endblock %}
 
-<div id="content_wrap">
 {% block content %}
 {% endblock %}
-</div>
 
 {% block footer %}
-<footer id="footer">
+<footer id="footer" class="flex-horizontal">
     <p>Igor Anpilogov 2020</p>
 </footer>
 {% endblock %}
-
 </body>
 </html>

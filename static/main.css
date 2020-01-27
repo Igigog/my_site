@@ -1,0 +1,214 @@
+/*
+ dark: #051622
+ green: #1BA098
+ yellow: #DEB992
+*/
+
+/* START COMMON ==================================================== */
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+.flex-horizontal{
+  display: flex;
+  flex-direction: row;
+}
+.centered {
+  text-align: center;
+}
+.inner-centered div, li{
+  text-align: center;
+}
+.fit-height {
+  max-height: 100%;
+}
+/* END COMMON ====================================================== */
+html{
+  height:100%;
+  margin:0;
+}
+body{
+  margin: 0;
+  min-height: 100%;
+  color: floralwhite;
+  background: radial-gradient(circle, rgba(5,22,34,0.9630484988452656) 33%, rgba(5,22,34,1) 100%);
+}
+p{
+  color: floralwhite;
+}
+#footer{
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  margin-top: auto;
+  justify-content: center;
+  border-top: 1px solid rgb(124,129,140);
+  height: 50px;
+}
+.header{
+  flex: 0 1 auto;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+  height: 6vh;
+}
+.header li{
+  text-decoration: none;
+  float: left;
+  border-radius: 19px;
+  margin: 9px;
+  padding: 3px 8px;
+}
+.header ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.header li.current{
+  background: #1BA098;
+}
+li.user_hello{
+  border: 0;
+  margin-left: 25%;
+}
+li.user_hello:hover:active{
+  background: transparent;
+}
+a{
+  color: #DEB992;
+  text-decoration: none;
+}
+a:visited, a:active{
+  color: #DEB992;
+}
+/* END BASE STYLE  ======================================== */
+/* START FORUM ============================================ */
+.thread_view{
+  margin-top: 3px;
+}
+.thread_name{
+  border: 1px solid black;
+  border-radius: 8px;
+  background: rgb(82,148,226);
+}
+.thread_text{
+  padding-bottom: 3px;
+  padding-top: 3px;
+  font-style: italic;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+  background: rgb(124,129,140);
+}
+.comments{
+  margin-top: 2px;
+}
+.comment{
+  margin-bottom: 1px;
+  border-radius: 8px;
+  border: 1px solid black;
+  background: rgb(82,148,226);
+}
+.comment_data{
+  color: white;
+  border-right: 1px solid black;
+  flex: 0 1 15%;
+}
+.comment_data .creator_name{
+  margin: 0 0 3px 3px;
+}
+.comment_text{
+  padding: 3px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  background: rgb(124,129,140); /*grey*/
+  flex: 1 1 85%
+}
+.new_comment_text input{
+  color: white;
+  border-radius: 3px;
+  padding-top: 3px;
+  margin-top: 3px;
+}
+/* END FORUM ================================================ */
+/* START ABOUTUS ============================================ */
+#aboutus{
+  justify-content: center;
+}
+#aboutus .text{
+  padding-left: 8px;
+}
+#aboutus .image{
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#aboutus img{
+  padding: 5px;
+  width: 4cm;
+  border-radius: 50%;
+  border: 3px solid rgb(124,129,140);
+}
+#aboutus p{
+  margin: 4px;
+}
+#aboutus .placeholder{
+  flex-grow: 3;
+  flex-basis: 50%;
+}
+/* END ABOUTUS =============================== */
+/* START LOGIN =============================== */
+#loginregister {
+  flex: 1.5 0 20%;
+  padding-bottom: 5%;
+  margin: auto 10%;
+}
+#loginscreen{
+  height: calc(100vh - 6vh - 50px);
+  justify-content: space-around;
+}
+input[type=text], input[type=password] {
+  background: transparent;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-bottom: 2px solid floralwhite;
+  border-radius: 1px;
+  box-sizing: border-box;
+  color: floralwhite;
+  font-size: 17px;
+}
+h2{
+  color: white;
+  border-block-end-style: double;
+  font-size: xx-large;
+  padding-bottom: 10px;
+  margin-bottom: 13px;
+}
+.LRbutton{
+  background: rgba(124,129,140, .1);
+  border-radius: 8px;
+  border: 1px solid floralwhite;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
+}
+.LRbutton:hover {
+  background-color: rgba(124,129,140, .15);
+  box-shadow: 9px 9px 13px -13px rgba(0,0,0,0.9);
+  color: floralwhite;
+}
+#loginregister label{
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 20px;
+}
+body.login{
+  height: 100vh;
+  overflow: hidden;
+}
+#loginimage {
+  flex: 0.5 2 auto;
+}
+/* END LOGIN ====================================== */

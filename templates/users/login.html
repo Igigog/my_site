@@ -1,19 +1,22 @@
-{% extends 'blog/../main/../main.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Login{% endblock %}
 {% block login_current %}current{% endblock %}
+{% block inner_name %}login{% endblock %}
 
 {% block content %}
-<section id="loginregister">
-    <h2>Log In </h2>
-    <form action="{% url 'login' %}">
-        {% csrf_token %}
-        <p class="LRtext">Username:</p><input type="text" name="Username" placeholder="Username">
-        <p class="LRtext">Password:</p> <input type="text" name="Password" placeholder="Password">
-        <input class="LRbutton" type="submit" value="Log in">
-    </form>
-    <form action="{% url 'register' %}">
-        <input class="LRbutton" type="submit" value="Register">
-    </form>
-</section>
+<div id="loginscreen" class="flex-horizontal">
+    <div id="loginimage" class="centered fit-height">
+        <img src="{% static 'yozh.png' %}" alt="space filler" class="fit-height">
+    </div>
+    <div id="loginregister" class="centered">
+        <h2>Log In </h2>
+        <form action="{% url 'users:login' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input class="LRbutton centered" type="submit" value="Log in">
+        </form>
+    </div>
+</div>
 {% endblock %}
